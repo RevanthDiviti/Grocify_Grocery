@@ -1,9 +1,10 @@
 import React from "react";
+import Home from "./components/Home/Home.jsx";
 
 const App = () => {
   return (
     <div>
-      <h1>Revanth Mudiraj</h1>
+      <Home />
     </div>
   );
 };
