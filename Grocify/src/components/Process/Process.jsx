@@ -15,7 +15,9 @@ const Process = () => {
     return (
       <div
         key={step.id}
-        className={`flex-1 basis-[300px] ${step.id % 2 == 0 ? "md:-mt-100" : "items-start"}`}
+        className={`flex-1 basis-[300px] ${
+          step.id % 2 == 0 ? "md:-mt-100" : "items-start"
+        }`}
       >
         <span
           className="flex justify-center items-center w-18 h-18 mx-auto text-8xl bg-zinc-800 text-white
