@@ -4,6 +4,7 @@ import { HiShoppingBag } from "react-icons/hi2";
 import { IoSearch } from "react-icons/io5";
 import { TbMenu2 } from "react-icons/tb";
 import { TbMenu3 } from "react-icons/tb";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -12,6 +13,10 @@ const Navbar = () => {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+  const homeTab = () => window.scrollTo(0, 0);
+  const aboutTab = () => window.scrollTo(0, 1400);
+  const processTab = () => window.scrollTo(0, 3950);
+  const contactTab = () => window.scrollTo(0, 5000);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,43 +33,48 @@ const Navbar = () => {
     >
       <nav className=" max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="text-3xl font-bold ">
+        <Link to="/" className="text-3xl font-bold ">
           Gr<span className="text-orange-500 uppercase ">o</span>cify
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="md:flex gap-x-15 hidden ">
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
+              id="home_tab"
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+              onClick={homeTab}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+              onClick={aboutTab}
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+              onClick={processTab}
             >
               Process
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="#"
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+              onClick={contactTab}
             >
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -85,20 +95,20 @@ const Navbar = () => {
             </button>
           </div>
 
-          <a href="" className="text-zinc-800 text-2xl">
+          <Link to="" className="text-zinc-800 text-2xl">
             <GoHeartFill />
-          </a>
-          <a href="" className="text-zinc-800 text-2xl">
+          </Link>
+          <Link to="" className="text-zinc-800 text-2xl">
             <HiShoppingBag />
-          </a>
+          </Link>
           {/* Hamburger */}
-          <a href="#" className="text-zinc-800 text-3xl  md:hidden">
+          <Link to="#" className="text-zinc-800 text-3xl  md:hidden">
             {showMenu ? (
               <TbMenu3 onClick={toggleMenu} />
             ) : (
               <TbMenu2 onClick={toggleMenu} />
             )}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu */}
@@ -109,36 +119,40 @@ const Navbar = () => {
          } `}
         >
           <li>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+              onClick={homeTab}
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="#"
+              onClick={aboutTab}
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
             >
               About
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="#"
+              onClick={processTab}
               className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
             >
               Process
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"
+            <Link
+              to="#"
+              className="font-semibold tracking-wider text-zinc-800 hover:text-orange-500"              
+              onClick={contactTab}
             >
               Contact Us
-            </a>
+            </Link>
           </li>
           <li className="flex p-1 border-2 border-orange-500 rounded-full md:hidden ">
             <input

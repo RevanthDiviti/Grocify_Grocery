@@ -3,8 +3,12 @@ import products from "../ProductList/ProductList";
 import Cards from "../Cards/Cards";
 import Banner from "../Banner/Banner";
 
-const CategoryPage = () => {
-  const renderProduct = products.map((product) => {
+const CategoryPage = ({ title, bgImage, categories = [] }) => {
+  let filteredItems = categories.includes("All")
+    ? products
+    : products.filter((item) => categories.includes(item.category));
+
+  const renderProduct = filteredItems.map((product) => {
     return (
       <Cards name={product.name} image={product.image} price={product.price} />
     );
@@ -12,7 +16,7 @@ const CategoryPage = () => {
 
   return (
     <div>
-      <Banner />
+      <Banner title={title} bgImage={bgImage} />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-9 py-20 max-w-[1400px] mx-auto px-10">
         {renderProduct}
       </div>

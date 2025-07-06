@@ -13,7 +13,7 @@ const Products = () => {
   let filteredItems =
     activeTab === "All"
       ? ProductList
-      : ProductList?.filter((item) => item.categotry === activeTab);
+      : ProductList?.filter((item) => item.category === activeTab);
 
   const renderCards = filteredItems.slice(0, 8).map((product) => {
     return (
