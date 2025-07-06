@@ -1,9 +1,10 @@
 import React from "react";
+import CategoryPage from "../CategoryPage/CategoryPage";
 
 const Fruits = () => {
   return (
     <div>
-      <h1>This is fruits page</h1>
+      <CategoryPage />
     </div>
   );
 };

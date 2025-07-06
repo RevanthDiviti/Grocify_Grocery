@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Banner from "../Banner/Banner";
+import CategoryPage from "../CategoryPage/CategoryPage";
 
 const SeaFood = () => {
   return (
     <div>
-      <h1>This is SeaFood Page</h1>
+      <CategoryPage />
     </div>
-  )
-}
+  );
+};
 
-export default SeaFood
+export default SeaFood;
