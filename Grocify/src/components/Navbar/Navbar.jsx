@@ -14,8 +14,8 @@ const Navbar = () => {
     setShowMenu(!showMenu);
   };
   const homeTab = () => window.scrollTo(0, 0);
-  const aboutTab = () => window.scrollTo(0, 1400);
-  const processTab = () => window.scrollTo(0, 3950);
+  const aboutTab = () => window.scrollTo(0, 1460);
+  const processTab = () => window.scrollTo(0, 3980);
   const contactTab = () => window.scrollTo(0, 5000);
 
   useEffect(() => {
